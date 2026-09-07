@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Alchemy Academy Nurture Campaign Plan</title>
+  <style>
+    :root {
+      --ink: #0b0817;
+      --ink-2: #120d24;
+      --panel: #171127;
+      --panel-2: #211737;
+      --gold: #ceb466;
+      --gold-light: #f3e6b8;
+      --violet: #a855f7;
+      --violet-light: #d8b4fe;
+      --mint: #34d399;
+      --text: #f3f0fa;
+      --muted: rgba(243, 240, 250, 0.68);
+      --soft: rgba(243, 240, 250, 0.45);
+      --line: rgba(255, 255, 255, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(900px 520px at 50% -10%, rgba(168, 85, 247, 0.22), transparent 65%),
+        radial-gradient(760px 460px at 100% 12%, rgba(206, 180, 102, 0.12), transparent 60%),
+        var(--ink);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+      padding: 36px 16px 56px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      border: 1px solid rgba(206, 180, 102, 0.28);
+      background: linear-gradient(145deg, rgba(206, 180, 102, 0.14), rgba(168, 85, 247, 0.08) 48%, rgba(18, 13, 36, 0.82));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      padding: 34px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -160px;
+      top: -160px;
+      background: rgba(206, 180, 102, 0.16);
+      filter: blur(70px);
+      border-radius: 999px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 999px;
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      padding: 6px 11px;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(206, 180, 102, 0.75);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.05;
+    }
+
+    h1 {
+      margin-top: 18px;
+      max-width: 760px;
+      font-size: 52px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    p { margin: 0; }
+
+    .gold { color: var(--gold); }
+    .violet { color: var(--violet-light); }
+    .muted { color: var(--muted); }
+    .soft { color: var(--soft); }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .section {
+      margin-top: 28px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025));
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.045);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .card.gold-card {
+      border-color: rgba(206, 180, 102, 0.30);
+      background: rgba(206, 180, 102, 0.075);
+    }
+
+    .card.violet-card {
+      border-color: rgba(168, 85, 247, 0.32);
+      background: rgba(168, 85, 247, 0.08);
+    }
+
+    .label {
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li { margin: 6px 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    th, td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      padding: 12px 10px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    th {
+      color: var(--gold-light);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(206, 180, 102, 0.08);
+    }
+
+    td { color: var(--muted); }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      border: 1px solid rgba(206, 180, 102, 0.28);
+      border-radius: 999px;
+      color: var(--gold-light);
+      background: rgba(206, 180, 102, 0.075);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 10px;
+    }
+
+    .email-preview {
+      width: 100%;
+      max-width: 600px;
+      margin: 18px auto 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(206, 180, 102, 0.24);
+      background: #120d24;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
+    }
+
+    .email-top {
+      background: linear-gradient(135deg, #1b1230, #2a1846);
+      padding: 22px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .email-body {
+      padding: 24px;
+      background: #f8f5eb;
+      color: #241d33;
+    }
+
+    .email-body h4 {
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      line-height: 1.1;
+      color: #171229;
+    }
+
+    .email-body p {
+      color: #4c455c;
+      font-size: 15px;
+      margin: 10px 0 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: #ceb466;
+      color: #120d24;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .button.violet-button {
+      background: #a855f7;
+      color: #ffffff;
+    }
+
+    .note {
+      border-left: 3px solid var(--gold);
+      padding-left: 14px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      color: var(--soft);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 18px 10px 36px; }
+      .hero, .section { padding: 22px; }
+      h1 { font-size: 38px; }
+      h2 { font-size: 28px; }
+      .grid { grid-template-columns: 1fr; }
+      th, td { display: block; width: 100%; }
+      th { display: none; }
+      td { padding: 9px 0; }
+      tr { display: block; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span> Voice Alchemy Academy</div>
+      <h1>Email Nurture System for Every Funnel</h1>
+      <p>
+        Strategy handoff for building CRM email templates and automated funnels. Email template previews use the CRM builder's
+        600px canvas width. The campaign strategy assumes the website is student-first, teachers enter through demo capture,
+        and mentorship applicants land on a higher-touch founder-led application path.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Executive Funnel Map</h2>
+      <div class="grid">
+        <div class="card gold-card">
+          <div class="label">Primary Funnel</div>
+          <h3>Student Free App Signup</h3>
+          <p class="muted">Goal: get singers into the app fast, activate tool usage, create a practice habit, then monetize through AI, courses, storage, and mentorship.</p>
+          <ul>
+            <li>Landing: <strong>/signup?role=student&amp;src=landing</strong></li>
+            <li>First action: open Training Center</li>
+            <li>Core promise: "Stop guessing. See yourself improve."</li>
+          </ul>
+        </div>
+        <div class="card violet-card">
+          <div class="label">Teacher Funnel</div>
+          <h3>Platform Demo Request</h3>
+          <p class="muted">Goal: qualify coaches and studios into a walkthrough where the product is sold through their real teaching workflow.</p>
+          <ul>
+            <li>Landing: <strong>#teacher-demo</strong> or future <strong>/demo</strong></li>
+            <li>First action: request demo</li>
+            <li>Core promise: "See what students practiced before every lesson."</li>
+          </ul>
+        </div>
+        <div class="card gold-card">
+          <div class="label">Premium Student Funnel</div>
+          <h3>1:1 Mentorship Application</h3>
+          <p class="muted">Goal: turn high-intent students into completed voice applications and booked admissions conversations.</p>
+          <ul>
+            <li>Landing: <strong>/mentorship</strong></li>
+            <li>First action: start Voice Application</li>
+            <li>Core promise: founder-led, app-enhanced vocal transformation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label">Fallback Funnel</div>
+          <h3>Cold Lead / Exit Intent</h3>
+          <p class="muted">Goal: capture visitors who are not ready to create an account, apply, or request a demo.</p>
+          <ul>
+            <li>Landing: relevant original page</li>
+            <li>First action: email capture</li>
+            <li>Core promise: useful resource, not a newsletter</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Persona Mindsets</h2>
+      <table>
+        <tr>
+          <th>Role</th>
+          <th>What They Are Thinking</th>
+          <th>Message They Need</th>
+          <th>Conversion Impulse</th>
+        </tr>
+        <tr>
+          <td><strong>Self-taught singer</strong></td>
+          <td>"I do not know if I am actually improving. I need something that tells me what is happening."</td>
+          <td>Immediate visual feedback, no gear, no judgment, fast first win.</td>
+          <td>Try Pitch Perfect now.</td>
+        </tr>
+        <tr>
+          <td><strong>Artist / songwriter</strong></td>
+          <td>"I want my voice and songs to feel more professional, but I need direction."</td>
+          <td>Practice tools plus creative coaching path: voice, songwriting, performance, mentorship.</td>
+          <td>Create account, then explore songwriting or mentorship.</td>
+        </tr>
+        <tr>
+          <td><strong>Mentorship candidate</strong></td>
+          <td>"I want a real guide. I want to be seen, not just trained by software."</td>
+          <td>Founder-led, intimate, structured, app-enhanced transformation.</td>
+          <td>Start the Voice Application.</td>
+        </tr>
+        <tr>
+          <td><strong>Independent vocal coach</strong></td>
+          <td>"My students say they practiced. I have no idea what actually happened."</td>
+          <td>Between-lesson visibility, more accountable lessons, less scattered admin.</td>
+          <td>Book demo around student practice data.</td>
+        </tr>
+        <tr>
+          <td><strong>Studio owner</strong></td>
+          <td>"I need a system that scales quality across teachers and students."</td>
+          <td>Operational clarity: roster, scheduling, lesson notes, practice telemetry, courses.</td>
+          <td>Request studio walkthrough.</td>
+        </tr>
+        <tr>
+          <td><strong>Warm but undecided visitor</strong></td>
+          <td>"This looks cool, but I am not ready to sign up."</td>
+          <td>Give one practical win in exchange for email.</td>
+          <td>Download/use a free resource.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Campaign 1: Student Free App Activation</h2>
+      <p class="muted">Trigger: user creates a student account or enters email via student lead capture. Primary landing should be the app signup/login flow, then Training Center.</p>
+      <div class="pill-row">
+        <span class="pill">Audience: students</span>
+        <span class="pill">Goal: first practice session</span>
+        <span class="pill">CTA: Start singing free</span>
+        <span class="pill">Landing: /signup?role=student</span>
+      </div>
+      <table>
+        <tr>
+          <th>Timing</th>
+          <th>Subject</th>
+          <th>Core Message</th>
+          <th>CTA + Landing</th>
+        </tr>
+        <tr>
+          <td>Immediate</td>
+          <td>Your voice is ready to become visible</td>
+          <td>Welcome them, reduce friction, send them straight to Pitch Perfect. One job: sing one sustained note and see the needle move.</td>
+          <td>Open Pitch Perfect -> app Training Center</td>
+        </tr>
+        <tr>
+          <td>Day 1</td>
+          <td>The 30-second practice that tells you everything</td>
+          <td>Teach a tiny practice loop: sing, watch pitch, repeat. Position the app as proof, not homework.</td>
+          <td>Try today&apos;s pitch check -> Training Center</td>
+        </tr>
+        <tr>
+          <td>Day 3</td>
+          <td>Sharp, flat, or locked in?</td>
+          <td>Explain pitch tendency in plain language. Make the user curious about their own data.</td>
+          <td>Find your pitch tendency -> Pitch Trainer</td>
+        </tr>
+        <tr>
+          <td>Day 5</td>
+          <td>Rhythm is the part singers forget to train</td>
+          <td>Introduce Rhythm Trainer as the second habit loop. Keep it playful and specific.</td>
+          <td>Try Rhythm Trainer -> Training Center</td>
+        </tr>
+        <tr>
+          <td>Day 7</td>
+          <td>Your first week of vocal data</td>
+          <td>Summarize the value of streaks and scores. Invite them to keep the habit alive and preview upgrade paths softly.</td>
+          <td>Keep your streak going -> Dashboard</td>
+        </tr>
+        <tr>
+          <td>Day 10</td>
+          <td>When you want deeper feedback</td>
+          <td>Introduce AI/courses/mentorship as the next layer after free tools have value.</td>
+          <td>Explore deeper coaching -> Courses or Mentorship</td>
+        </tr>
+      </table>
+
+      <div class="email-preview">
+        <div class="email-top">
+          <div class="eyebrow"><span class="dot"></span> Student Template Preview</div>
+        </div>
+        <div class="email-body">
+          <h4>Start with one note.</h4>
+          <p>Open Pitch Perfect, sing a comfortable note, and watch where your voice actually lands. No special mic. No pressure. Just the fastest way to stop guessing.</p>
+          <a class="button" href="#">Open Pitch Perfect</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Campaign 2: Student Upgrade Nurture</h2>
+      <p class="muted">Trigger: student has practiced but has not upgraded or applied for mentorship. This campaign should only start after at least one saved/known app action when possible.</p>
+      <table>
+        <tr>
+          <th>Timing</th>
+          <th>Subject</th>
+          <th>Core Message</th>
+          <th>CTA + Landing</th>
+        </tr>
+        <tr>
+          <td>After 2+ sessions</td>
+          <td>You have data now. Here is what to do with it.</td>
+          <td>Move from curiosity to progress plan. Show that practice data becomes more powerful with analysis.</td>
+          <td>See your progress -> Dashboard</td>
+        </tr>
+        <tr>
+          <td>Day 4 after activation</td>
+          <td>The difference between practicing and training</td>
+          <td>Position structured courses as the bridge from random reps to vocal development.</td>
+          <td>Explore courses -> Courses</td>
+        </tr>
+        <tr>
+          <td>Day 7 after activation</td>
+          <td>Want a human to see this with you?</td>
+          <td>Open the mentorship door. The app proves what is happening; Julia/mentor helps them transform it.</td>
+          <td>Apply for 1:1 mentorship -> /mentorship</td>
+        </tr>
+        <tr>
+          <td>Day 12 after activation</td>
+          <td>Your next vocal breakthrough needs a loop</td>
+          <td>Lesson, notes, assigned practice, visible progress, repeat. This is the premium platform story.</td>
+          <td>See mentorship -> /mentorship</td>
+        </tr>
+      </table>
+      <p class="note">Do not lead with trial limits. Lead with what they have already felt: the relief of seeing their voice. Upgrade emails should make the next layer feel natural, not punitive.</p>
+    </section>
+
+    <section class="section">
+      <h2>Campaign 3: Student Lead Magnet / Exit Intent</h2>
+      <p class="muted">Trigger: email captured without account creation. This is for visitors who hesitated. The lead magnet should be lightweight and immediately useful.</p>
+      <div class="grid">
+        <div class="card gold-card">
+          <div class="label">Recommended Resource</div>
+          <h3>The 3 Pitch Mistakes Almost Every Self-Taught Singer Makes</h3>
+          <p class="muted">Short PDF or email mini-guide. Include one exercise that ends with a CTA to try Pitch Perfect.</p>
+        </div>
+        <div class="card">
+          <div class="label">Landing</div>
+          <h3>Student Signup</h3>
+          <p class="muted">Every email should move toward account creation, not another blog page. Use the resource as the bridge back to the app.</p>
+        </div>
+      </div>
+      <table>
+        <tr>
+          <th>Timing</th>
+          <th>Subject</th>
+          <th>Core Message</th>
+          <th>CTA + Landing</th>
+        </tr>
+        <tr>
+          <td>Immediate</td>
+          <td>Your pitch guide is here</td>
+          <td>Deliver the resource. Set expectation that the app lets them test the problem immediately.</td>
+          <td>Read guide + try tool -> Signup</td>
+        </tr>
+        <tr>
+          <td>Day 2</td>
+          <td>The mistake your ears miss</td>
+          <td>Teach one pitch concept, then push to visual feedback.</td>
+          <td>See it live -> Signup</td>
+        </tr>
+        <tr>
+          <td>Day 5</td>
+          <td>Try this before your next rehearsal</td>
+          <td>Give a pre-rehearsal warmup/check-in. Make the app feel useful today.</td>
+          <td>Start singing free -> Signup</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Campaign 4: Teacher Demo Request Nurture</h2>
+      <p class="muted">Trigger: teacher submits demo form. This should feel concierge, not newsletter. The product is sold through their specific workflow pain.</p>
+      <div class="pill-row">
+        <span class="pill">Audience: teachers</span>
+        <span class="pill">Goal: booked demo</span>
+        <span class="pill">CTA: Choose a demo time</span>
+        <span class="pill">Landing: scheduling link or /demo-confirmed</span>
+      </div>
+      <table>
+        <tr>
+          <th>Timing</th>
+          <th>Subject</th>
+          <th>Core Message</th>
+          <th>CTA + Landing</th>
+        </tr>
+        <tr>
+          <td>Immediate</td>
+          <td>We received your VAA demo request</td>
+          <td>Confirm receipt. Reflect their selected pain point. Tell them what the walkthrough will cover.</td>
+          <td>Book your walkthrough -> scheduling link</td>
+        </tr>
+        <tr>
+          <td>+1 hour if not booked</td>
+          <td>What we will show you in the demo</td>
+          <td>List the exact workflow: roster, student telemetry, live classroom, notes, recordings, courses.</td>
+          <td>Pick a time -> scheduling link</td>
+        </tr>
+        <tr>
+          <td>Day 1 if not booked</td>
+          <td>The real problem is between lessons</td>
+          <td>Thought-leadership email. Most teaching tools manage lessons; VAA shows what happened between them.</td>
+          <td>See the workflow -> scheduling link</td>
+        </tr>
+        <tr>
+          <td>Day 3 if not booked</td>
+          <td>Bring one student to the demo</td>
+          <td>Ask them to think of a student who says they practiced but needs accountability. Make the demo personal.</td>
+          <td>Book a studio demo -> scheduling link</td>
+        </tr>
+      </table>
+
+      <div class="email-preview">
+        <div class="email-top">
+          <div class="eyebrow"><span class="dot"></span> Teacher Template Preview</div>
+        </div>
+        <div class="email-body">
+          <h4>Your demo will start between lessons.</h4>
+          <p>We will show the part most studio tools miss: what your students practiced, where they struggled, and how that rolls into your next live lesson.</p>
+          <a class="button violet-button" href="#">Choose a demo time</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Campaign 5: Teacher Resource Funnel</h2>
+      <p class="muted">Use this when a teacher is not ready to request a demo. It can also improve paid/social conversion by giving a softer offer than "Book a demo."</p>
+      <div class="grid">
+        <div class="card violet-card">
+          <div class="label">Recommended Resource</div>
+          <h3>Between-Lesson Practice Visibility Playbook</h3>
+          <p class="muted">A 5-7 page PDF showing how to make student practice more measurable without making lessons feel clinical.</p>
+        </div>
+        <div class="card">
+          <div class="label">Why This Works</div>
+          <h3>It names the hidden pain</h3>
+          <p class="muted">Teachers do not just need software. They need students to arrive prepared, honest, and accountable.</p>
+        </div>
+      </div>
+      <table>
+        <tr>
+          <th>Timing</th>
+          <th>Subject</th>
+          <th>Core Message</th>
+          <th>CTA + Landing</th>
+        </tr>
+        <tr>
+          <td>Immediate</td>
+          <td>Your practice visibility playbook</td>
+          <td>Deliver the PDF. Frame VAA as the operational version of the method.</td>
+          <td>Download PDF -> resource page</td>
+        </tr>
+        <tr>
+          <td>Day 2</td>
+          <td>The question to ask before every lesson</td>
+          <td>Teach: "What happened since we last met?" Then show how VAA answers it with data.</td>
+          <td>Book demo -> #teacher-demo or scheduler</td>
+        </tr>
+        <tr>
+          <td>Day 5</td>
+          <td>Students do more when progress is visible</td>
+          <td>Accountability without shame. Scores, streaks, and assigned work create clarity.</td>
+          <td>See teacher workflow -> teacher demo</td>
+        </tr>
+        <tr>
+          <td>Day 9</td>
+          <td>What your studio could stop duct-taping together</td>
+          <td>Scheduling, notes, video lessons, recordings, courses, student progress.</td>
+          <td>Request walkthrough -> teacher demo</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Campaign 6: Teacher Post-Demo Follow-Up</h2>
+      <p class="muted">Trigger: demo completed. Segment by teacher size and stated pain. This is where you convert the serious buyer.</p>
+      <table>
+        <tr>
+          <th>Timing</th>
+          <th>Subject</th>
+          <th>Core Message</th>
+          <th>CTA + Landing</th>
+        </tr>
+        <tr>
+          <td>Same day</td>
+          <td>Recap: how VAA would fit your studio</td>
+          <td>Personal recap. Repeat their pain, show the exact setup path, include next action.</td>
+          <td>Start setup call / reply</td>
+        </tr>
+        <tr>
+          <td>Day 2</td>
+          <td>Your first 3 students to move into VAA</td>
+          <td>Make adoption concrete. Suggest a pilot with a small group.</td>
+          <td>Plan pilot -> reply or booking</td>
+        </tr>
+        <tr>
+          <td>Day 5</td>
+          <td>What changes after the first week</td>
+          <td>Paint the operational future: practice data before lessons, clearer homework, notes that persist.</td>
+          <td>Confirm next step -> reply</td>
+        </tr>
+        <tr>
+          <td>Day 10</td>
+          <td>Should we keep a place for your studio?</td>
+          <td>Polite close-the-loop. Ask for a yes/no and preserve goodwill.</td>
+          <td>Yes, keep my spot / Not now</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Campaign 7: Mentorship Application Nurture</h2>
+      <p class="muted">Trigger: visitor clicks mentorship but does not submit, or submits the application. This funnel should feel personal, founder-led, and selective.</p>
+      <table>
+        <tr>
+          <th>Segment</th>
+          <th>Timing</th>
+          <th>Subject</th>
+          <th>Core Message + CTA</th>
+        </tr>
+        <tr>
+          <td>Started but not submitted</td>
+          <td>2 hours</td>
+          <td>Your Voice Application is waiting</td>
+          <td>Lower friction. "You do not need perfect answers. Julia wants to understand where your voice is now." CTA: Finish application -> /mentorship#apply</td>
+        </tr>
+        <tr>
+          <td>Started but not submitted</td>
+          <td>Day 2</td>
+          <td>What Julia looks for in an application</td>
+          <td>Explain fit: openness, consistency, curiosity, willingness to practice. CTA: Finish application.</td>
+        </tr>
+        <tr>
+          <td>Submitted</td>
+          <td>Immediate</td>
+          <td>Your Voice Application is in</td>
+          <td>Confirm receipt. Tell them Julia reads applications personally. CTA: Start free app practice while you wait -> student signup.</td>
+        </tr>
+        <tr>
+          <td>Submitted</td>
+          <td>Day 2</td>
+          <td>While Julia reviews your application</td>
+          <td>Invite them to do a gentle app-based pitch check so the future conversation has more context. CTA: Start singing free.</td>
+        </tr>
+        <tr>
+          <td>Accepted / invited</td>
+          <td>Manual</td>
+          <td>Julia would like to meet with you</td>
+          <td>High-touch admissions email. CTA: Book conversation.</td>
+        </tr>
+      </table>
+
+      <div class="email-preview">
+        <div class="email-top">
+          <div class="eyebrow"><span class="dot"></span> Mentorship Template Preview</div>
+        </div>
+        <div class="email-body">
+          <h4>You do not need perfect answers.</h4>
+          <p>Your Voice Application is simply a way for Julia to understand where your voice has been, where it wants to go, and what kind of support would actually help.</p>
+          <a class="button" href="#">Finish your application</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Campaign 8: Re-Engagement</h2>
+      <p class="muted">Trigger: no app activity or no response. Keep these plain, useful, and behavior-based.</p>
+      <table>
+        <tr>
+          <th>Audience</th>
+          <th>Timing</th>
+          <th>Subject</th>
+          <th>CTA + Landing</th>
+        </tr>
+        <tr>
+          <td>Inactive student</td>
+          <td>7 days idle</td>
+          <td>Come back for one note</td>
+          <td>One-note pitch check -> Training Center</td>
+        </tr>
+        <tr>
+          <td>Inactive student</td>
+          <td>14 days idle</td>
+          <td>Your voice does not need a big restart</td>
+          <td>Restart your streak -> Training Center</td>
+        </tr>
+        <tr>
+          <td>Unbooked teacher demo</td>
+          <td>14 days idle</td>
+          <td>Still want to see student practice data?</td>
+          <td>Book demo -> scheduler</td>
+        </tr>
+        <tr>
+          <td>Mentorship non-completer</td>
+          <td>7 days idle</td>
+          <td>Want to keep this door open?</td>
+          <td>Finish application -> /mentorship#apply</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Template Build List for Claude</h2>
+      <p class="muted">Create these as reusable CRM email templates first, then assemble funnels from them. Use a 600px max-width email canvas, light content body, dark VAA header, gold student buttons, violet teacher buttons.</p>
+      <table>
+        <tr>
+          <th>Template Name</th>
+          <th>Category</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td>Student 01 - Welcome / First Note</td>
+          <td>Student Activation</td>
+          <td>Drive first app session.</td>
+        </tr>
+        <tr>
+          <td>Student 02 - 30 Second Pitch Check</td>
+          <td>Student Activation</td>
+          <td>Build immediate habit.</td>
+        </tr>
+        <tr>
+          <td>Student 03 - Pitch Tendency</td>
+          <td>Student Activation</td>
+          <td>Make data personal.</td>
+        </tr>
+        <tr>
+          <td>Student 04 - Rhythm Trainer</td>
+          <td>Student Activation</td>
+          <td>Introduce second free tool.</td>
+        </tr>
+        <tr>
+          <td>Student 05 - Upgrade Path</td>
+          <td>Student Upgrade</td>
+          <td>Introduce AI/courses/mentorship.</td>
+        </tr>
+        <tr>
+          <td>Lead Magnet - 3 Pitch Mistakes</td>
+          <td>Student Lead</td>
+          <td>Deliver student PDF/mini-guide.</td>
+        </tr>
+        <tr>
+          <td>Teacher 01 - Demo Received</td>
+          <td>Teacher Demo</td>
+          <td>Confirm request and push scheduling.</td>
+        </tr>
+        <tr>
+          <td>Teacher 02 - What We Will Show</td>
+          <td>Teacher Demo</td>
+          <td>Increase demo booking rate.</td>
+        </tr>
+        <tr>
+          <td>Teacher Resource - Practice Visibility Playbook</td>
+          <td>Teacher Lead</td>
+          <td>Deliver PDF and push demo.</td>
+        </tr>
+        <tr>
+          <td>Teacher Post-Demo Recap</td>
+          <td>Teacher Sales</td>
+          <td>Manual/semi-manual follow-up after demo.</td>
+        </tr>
+        <tr>
+          <td>Mentorship 01 - Application Started</td>
+          <td>Mentorship</td>
+          <td>Recover incomplete applications.</td>
+        </tr>
+        <tr>
+          <td>Mentorship 02 - Application Received</td>
+          <td>Mentorship</td>
+          <td>Confirm application and move into app practice.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>What Should Happen Next</h2>
+      <ol class="muted">
+        <li>Create the two resources: student "3 Pitch Mistakes" and teacher "Between-Lesson Practice Visibility Playbook." Keep both short and polished.</li>
+        <li>Add hidden tracking fields to website lead/demo/app forms: persona, source, intent, landing page, CTA id, utm_source, utm_campaign, utm_content.</li>
+        <li>In the CRM, create tags: student_free_signup, student_lead_magnet, student_active, student_inactive, teacher_demo_requested, teacher_demo_booked, teacher_post_demo, mentorship_started, mentorship_submitted.</li>
+        <li>Build templates from the list above using the 600px email canvas and VAA header/footer styling.</li>
+        <li>Build automations only after tags exist. Start with Student Activation, Teacher Demo Request, and Mentorship Application Received.</li>
+        <li>Add conversion events: email open, click, account created, first tool used, demo requested, demo booked, mentorship application submitted.</li>
+        <li>Review performance weekly. Optimize the first email and CTA before adding more complexity.</li>
+      </ol>
+      <p class="note">
+        Strategic priority: do not make every funnel sell everything. Students need momentum. Teachers need a conversation. Mentorship candidates need trust and specificity.
+      </p>
+    </section>
+
+    <p class="footer-note">Prepared for Voice Alchemy Academy. Use this as the campaign architecture handoff for CRM template and funnel creation.</p>
+  </main>
+</body>
+</html>

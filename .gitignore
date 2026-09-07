@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# keep the env template in the repo (.env* above ignores it)
+!.env.example
+
+# 58MB master photo; the site uses the optimized julia-founder*.webp copies
+public/images/photos/julia-professional-photo.png
