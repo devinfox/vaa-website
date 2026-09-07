@@ -57,7 +57,7 @@ export function StudentPopup() {
           <h3 id="student-popup-title" className="mt-4 font-display text-3xl font-medium leading-tight text-white sm:text-4xl">
             Want to know if you&rsquo;re <span className="text-gold-gradient">actually in tune</span>?
           </h3>
-          <p className="mt-3 text-sm text-white/65 sm:text-base">See every note land, in cents, the moment you sing it. Free to start, nothing to buy.</p>
+          <p className="mt-3 text-sm text-white/65 sm:text-base">See every note land the moment you sing it. Free to start, nothing to buy.</p>
           <ul className="mt-5 space-y-2.5">
             {[
               { icon: Mic2, t: 'Live pitch mirror plus scale and rhythm trainers' },

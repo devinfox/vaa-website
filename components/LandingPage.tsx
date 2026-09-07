@@ -10,6 +10,9 @@ import { MentorshipBand } from './MentorshipBand'
 import { CoachSection } from './CoachSection'
 import { ScreenGallery } from './ScreenGallery'
 import { Testimonials } from './Testimonials'
+
+// Placeholder quotes only; flip to true once real client testimonials are in.
+const SHOW_TESTIMONIALS = false
 import { Faq } from './Faq'
 import { FinalCta } from './FinalCta'
 import { Footer } from './Footer'
@@ -34,7 +37,8 @@ function Body() {
         <MentorshipBand />
         {isExplorer && <CoachSection />}
         <ScreenGallery />
-        <Testimonials />
+        {/* Testimonials are hidden until we have real client quotes; re-enable by restoring <Testimonials /> */}
+        {SHOW_TESTIMONIALS && <Testimonials />}
         <Faq />
         <FinalCta />
       </main>

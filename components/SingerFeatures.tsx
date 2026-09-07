@@ -7,7 +7,7 @@ const features = [
   {
     kicker: 'Pitch Trainer',
     title: 'See every note the moment you sing it.',
-    body: 'The live pitch trainer shows exactly where each note lands, in cents, as you sing. Pitch accuracy, vocal stability and tuning habits are tracked session by session, so progress stops being a guess.',
+    body: 'The live pitch trainer shows exactly where each note lands as you sing. Pitch accuracy, vocal stability and tuning habits are tracked session by session, so progress stops being a guess.',
     chips: ['Live pitch feedback', 'Cents accuracy', 'Streaks & best scores'],
     mentor: 'Your mentor sees the same data before your next lesson.',
     src: '/images/app/student_training_pitch_content.webp',

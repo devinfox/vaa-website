@@ -27,12 +27,12 @@ export function Hero() {
       eyebrow: 'For singers & artists',
       title: (
         <>
-          Stop guessing. <em className="text-gold-gradient not-italic">See</em> yourself improve.
+          Stop guessing. <em className="text-gold-gradient not-italic">Sing</em> yourself improve.
         </>
       ),
       body:
         'Sing into your phone or laptop and watch every note land in real time. Start free with pitch, scale and rhythm practice, build a streak, then add deeper vocal coaching, courses and 1:1 mentorship when you want a bigger push.',
-      proof: ['Live pitch feedback, in cents', 'Free pitch, scale & rhythm tools', 'Mentors who see your practice data'],
+      proof: ['Live pitch feedback as you sing', 'Free pitch, scale & rhythm tools', 'Mentors who see your practice data'],
       shot: '/images/app/student_training_pitch.webp',
       alt: 'Voice Alchemy Academy Training Center showing a student’s Pitch Trainer scores and Singer Performance Insights',
     },
