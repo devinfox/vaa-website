@@ -25,7 +25,7 @@ CONTENT_BG = "#FAFAFA"
 
 IMG = "../public/images"
 APP = "https://voicealchemyacademy.app"
-SITE = "https://voicealchemyacademy.app"
+SITE = "https://www.voicealchemyacademy.com"
 LOGO = f"{IMG}/logo.png"
 
 STUDENT_SIGNUP = f"{APP}/signup?role=student&src=email"
@@ -192,7 +192,7 @@ def block_list(blocks):
 FOOT_STUDENT = "Voice Alchemy Academy &middot; hello@voicealchemyacademy.com"
 FOOT_TEACHER = "Voice Alchemy Academy &middot; Built for singers who want proof and coaches who want clarity."
 ACCT = "You are receiving this because you created a Voice Alchemy Academy account."
-LEAD = "You are receiving this because you asked for the free pitch guide on voicealchemyacademy.app."
+LEAD = "You are receiving this because you asked for the free pitch guide on voicealchemyacademy.com."
 PITCH_GUIDE_URL = "#PITCH_GUIDE_PDF"
 BOOKING_URL = "#JULIA_BOOKING_LINK"
 LIVE_PITCH = f"{IMG}/email/pitch_perfect_session.webp"
@@ -276,7 +276,7 @@ email("students", 3, "Scales + Rhythm Expansion", "Day 5",
 
 email("students", 4, "Upgrade Path / Next Layer", "Day 10, only if the student has practiced at least once",
     "When you want more than numbers", "Your practice data can become a plan.",
-    "See 1:1 mentorship", "voicealchemyacademy.app/mentorship (courses linked in body)",
+    "See 1:1 mentorship", "voicealchemyacademy.com/mentorship (courses linked in body)",
     "Nothing in the app can be bought today except mentorship with Julia, so the upgrade email points there. "
     "It only lands after the singer has felt value from the free tools. The tone is an invitation, never a paywall.",
     ["logo.png", "ai_coach_card.webp"], [
@@ -579,7 +579,7 @@ email("mentorship", 4, "Not This Semester", "Manual send when there is no seat, 
 
 email("mentorship", 5, "Application Started, Not Finished", "2 hours after a started application is abandoned (only if the email field was captured)",
     "Your Voice Application is waiting", "You do not need perfect answers.",
-    "Finish your application", "voicealchemyacademy.app/mentorship#apply",
+    "Finish your application", "voicealchemyacademy.com/mentorship#apply",
     "Recovers people who opened the application and froze on the long-answer questions. The message lowers the bar: "
     "the application is not a test, a few honest sentences beat polished ones. "
     "Note: the website form only submits on completion today, so this needs the email field saved on blur before it can fire.",
@@ -599,7 +599,7 @@ email("mentorship", 5, "Application Started, Not Finished", "2 hours after a sta
 
 email("mentorship", 6, "Keep This Door Open?", "7 days after an abandoned application, last touch",
     "Want to keep this door open?", "One more chance to finish, or start free instead.",
-    "Finish your application", "voicealchemyacademy.app/mentorship#apply",
+    "Finish your application", "voicealchemyacademy.com/mentorship#apply",
     "Final nudge for non-completers. It offers two honest exits: finish the application, or skip it and train free in the app. "
     "Either keeps the person in the Voice Alchemy world. After this, no more mentorship emails to this address.",
     ["logo.png", "stage-mic.jpg"], [
@@ -817,7 +817,7 @@ def page():
 <b style="display:block;margin-top:18px">How this ships</b>
 <ul>
 <li><b>Installed from the CRM.</b> Templates &amp; Funnels &rarr; Funnels &rarr; <b>Install VAA campaign</b> creates every email below as an editable template built from the standard blocks (header, text, image, columns, button, divider, footer) and wires the funnels with the delays shown. Edit any of them in the template editor afterwards.</li>
-<li><b>Triggered from the website.</b> Every form on voicealchemyacademy.app posts first name, last name and email to the CRM. A singer's email enrolls the Student Leads track, a demo request enrolls the Teachers track, a coach's email alone enrolls the Playbook track, and a Voice Application enrolls the Mentorship track. A new student account enrolls the Students track and ends any lead track for the same address.</li>
+<li><b>Triggered from the website.</b> Every form on voicealchemyacademy.com posts first name, last name and email to the CRM. A singer's email enrolls the Student Leads track, a demo request enrolls the Teachers track, a coach's email alone enrolls the Playbook track, and a Voice Application enrolls the Mentorship track. A new student account enrolls the Students track and ends any lead track for the same address.</li>
 <li><b>Delays, not conditions.</b> The CRM sends each phase a fixed number of days after the previous one. "Only if unbooked" and "only if practiced" are not evaluated; pause or remove a person from the funnel page when the condition no longer applies.</li>
 <li><b>Sent by hand:</b> Teachers 4 and 5, Mentorship 3 and 4. Pick the lead on the template's Send dialog; Julia edits the first paragraph first. Mentorship 5 and 6 are not installed: the website only submits a finished application.</li>
 <li><b>Links to fill in</b> (CRM env vars): <code>EMAIL_LINK_DEMO_SCHEDULING</code>, <code>EMAIL_LINK_PLAYBOOK_PDF</code>, <code>EMAIL_LINK_PITCH_GUIDE_PDF</code>, <code>EMAIL_LINK_JULIA_BOOKING</code>. Until set, scheduling and booking buttons fall back to a mailto reply and the two PDF buttons point at the app.</li>
