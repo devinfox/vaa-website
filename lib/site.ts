@@ -6,8 +6,8 @@ export const site = {
   name: 'Voice Alchemy Academy',
   shortName: 'VAA',
   tagline: 'Real-time vocal training, AI coaching and 1:1 voice mentorship in one app.',
-  url: 'https://voicealchemyacademy.app',
-  mainSite: 'https://voicealchemyacademy.com',
+  url: 'https://www.voicealchemyacademy.com',
+  mainSite: 'https://www.voicealchemyacademy.com',
   contactEmail: 'hello@voicealchemyacademy.com',
 
   // Funnel destinations
