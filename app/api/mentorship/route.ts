@@ -8,9 +8,14 @@ import { sendToCrm } from '@/lib/crm'
  * Delivery order:
  *  1. SendGrid (SENDGRID_API_KEY + MENTORSHIP_FROM_EMAIL, a verified sender) → emails MENTORSHIP_TO_EMAIL
  *  2. Resend (RESEND_API_KEY + MENTORSHIP_FROM_EMAIL) → same
- *  3. CRM intake (CRM_LEADS_URL) so the applicant is auto-enrolled in the mentorship funnel
+ *  3. CRM intake (CRM_LEADS_URL) so the applicant is stored as a lead and auto-enrolled in the
+ *     mentorship funnel. Awaited: a serverless function is frozen as soon as it responds, so a
+ *     fire-and-forget call here was silently dropped and applications never reached the CRM.
  *  4. LEAD_WEBHOOK_URL (JSON POST) as a secondary copy if set
  *  5. Console log so nothing is lost in development
+ *
+ * The CRM is the system of record. When it is configured and rejects the application the form
+ * shows an error; when it accepts, the submission succeeds even if the notification email fails.
  */
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -114,8 +119,8 @@ export async function POST(request: Request) {
     }
   }
 
-  // CRM intake (auto-enrolls the applicant in the mentorship funnel). Fire-and-forget, same as the webhook.
-  sendToCrm({
+  // CRM intake (stores the lead + auto-enrolls in the mentorship funnel). Awaited so a failure surfaces.
+  const crm = await sendToCrm({
     type: 'mentorship_application',
     email: app.email,
     first_name: app.firstName,
@@ -133,19 +138,27 @@ export async function POST(request: Request) {
       discovery: app.discovery,
       comments: app.comments,
     },
-  }).catch((err) => console.error('[mentorship] CRM failed', err))
+  })
+  if (crm.configured && !crm.ok) {
+    return NextResponse.json({ ok: false, error: 'We could not save your application right now. Please try again.' }, { status: 502 })
+  }
 
   if (process.env.LEAD_WEBHOOK_URL) {
-    fetch(process.env.LEAD_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type: 'mentorship_application', to, ...app, fullName, createdAt: new Date().toISOString() }),
-    }).catch((err) => console.error('[mentorship] webhook failed', err))
+    try {
+      const res = await fetch(process.env.LEAD_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'mentorship_application', to, ...app, fullName, createdAt: new Date().toISOString() }),
+      })
+      if (!res.ok) console.error('[mentorship] webhook responded', res.status)
+    } catch (err) {
+      console.error('[mentorship] webhook failed', err)
+    }
   }
 
   if (!delivered) {
     console.log(`[mentorship] application for ${to} (no email provider configured)\n` + text)
-    if (process.env.NODE_ENV === 'production' && !process.env.LEAD_WEBHOOK_URL) {
+    if (process.env.NODE_ENV === 'production' && !crm.configured && !process.env.LEAD_WEBHOOK_URL) {
       return NextResponse.json({ ok: false, error: 'We could not send your application right now. Please email us directly.' }, { status: 502 })
     }
   }

@@ -108,8 +108,9 @@ export async function POST(request: Request) {
 
   const page = request.headers.get('referer') ?? null
 
-  // CRM intake (auto-enrolls the coach in the demo funnel). Fire-and-forget, same as the webhook.
-  sendToCrm({
+  // CRM intake (stores the lead + auto-enrolls the coach in the demo funnel). Awaited: a serverless
+  // function is frozen once it responds, so a fire-and-forget call could be dropped and the lead lost.
+  const crm = await sendToCrm({
     type: followUp ? 'teacher_demo_details' : 'teacher_demo',
     email: demo.email,
     first_name: demo.firstName,
@@ -125,20 +126,28 @@ export async function POST(request: Request) {
       biggestPain: demo.biggestPain,
       notes: demo.notes,
     },
-  }).catch((err) => console.error('[demo] CRM failed', err))
+  })
+  if (crm.configured && !crm.ok) {
+    return NextResponse.json({ ok: false, error: 'We could not save your request right now. Please try again.' }, { status: 502 })
+  }
 
   const webhook = process.env.DEMO_WEBHOOK_URL || process.env.LEAD_WEBHOOK_URL
   if (webhook) {
-    fetch(webhook, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type: followUp ? 'teacher_demo_details' : 'teacher_demo', ...demo, fullName, page, createdAt: new Date().toISOString() }),
-    }).catch((err) => console.error('[demo] webhook failed', err))
+    try {
+      const res = await fetch(webhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: followUp ? 'teacher_demo_details' : 'teacher_demo', ...demo, fullName, page, createdAt: new Date().toISOString() }),
+      })
+      if (!res.ok) console.error('[demo] webhook responded', res.status)
+    } catch (err) {
+      console.error('[demo] webhook failed', err)
+    }
   }
 
   if (!delivered) {
     console.log(`[demo] request for ${to} (no email provider configured)\n` + text)
-    if (process.env.NODE_ENV === 'production' && !webhook) {
+    if (process.env.NODE_ENV === 'production' && !crm.configured && !webhook) {
       return NextResponse.json({ ok: false, error: 'We could not send your demo request right now. Please email us directly.' }, { status: 502 })
     }
   }
